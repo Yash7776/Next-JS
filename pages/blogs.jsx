@@ -1,8 +1,10 @@
 import Image from "next/image";
 import React from "react";
 import sky from "@/public/img/sky.jpg";
-const Blog = () => {
+import Link from "next/link";
+const Blogs = () => {
   return (
+    <>
     <div>
       <div class="max-w-6xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
@@ -15,9 +17,9 @@ const Blog = () => {
           />
 
           <div class="p-5">
-            <h2 class="text-xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300">
+            <Link href="/blogpost/Yash" class="text-xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300">
               Exploring the Future of Tech
-            </h2>
+            </Link>
             <p class="mt-2 text-gray-600 text-sm">
               Discover how technology is reshaping our world, from AI
               advancements to sustainable innovation.
@@ -37,12 +39,11 @@ const Blog = () => {
             </div>
           </div>
         </div>
-        {/* 
-  <!-- Duplicate this card to show more blogs -->
-  <!-- Copy and change the content/image for multiple blog posts --> */}
+        
       </div>
     </div>
+    </>
   );
 };
 
-export default Blog;
+export default Blogs;
