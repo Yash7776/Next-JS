@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import sky from "@/public/img/sky.jpg";
 import Link from "next/link";
+
 const Blogs = () => {
   return (
     <>
