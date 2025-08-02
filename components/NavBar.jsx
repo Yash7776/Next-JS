@@ -37,11 +37,9 @@ const NavBar = () => {
             {/* Right Profile */}
             <div className="flex items-center space-x-2">
               <span className="text-sm">Hi, User</span>
-              <Image
-                src="https://via.placeholder.com/32"
+              <img
+                src="https://i.pravatar.cc/40"
                 alt="Profile"
-                width={32}
-                height={32}
                 className="rounded-full border border-white"
                 unoptimized // allows external image without config
               />

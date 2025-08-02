@@ -24,20 +24,18 @@ const Blogs = () => {
       <div className="max-w-6xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {blogs.map((blogitem)=>{
         return<>
-        <div key={blogitem.Heading} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+        <div key={blogitem.slug} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
           <Image
             src={sky}
-            width={50}
-            height={50}
             alt="Blog Cover"
             className="w-full h-48 object-cover"
           />
 
           <div className="p-5">
-            <Link href={`/blogpost/${blogitem.Heading}`} className="text-xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300">
+            <Link href={`blogpost/${blogitem.Slug}`} className="text-xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300">
             
             <p className="mt-2 text-gray-600 text-sm">
-              {blogitem.Content}
+              {blogitem.Heading}
             </p>
 
             <div className="mt-4 flex items-center justify-between">
@@ -55,7 +53,6 @@ const Blogs = () => {
           </Link>
           </div>
         </div>
-        
         </>
       })}
       </div>
