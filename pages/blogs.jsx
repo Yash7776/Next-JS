@@ -3,21 +3,8 @@ import React, { useEffect, useState } from "react";
 import sky from "@/public/img/sky.jpg";
 import Link from "next/link";
 
-const Blogs = () => {
-  const [blogs, setblogs] = useState([])
-  useEffect(()=>{
-    fetch('http://localhost:3000/api/Blogs')
-    .then(response => {
-     // Return a Promise that resolves with the parsed body (e.g., JSON, text)
-      return response.json(); // or response.text(), response.blob(), etc.
-    })
-    .then(data => {
-      // Handle the parsed data from the previous .then()
-      console.log(data);
-      setblogs(data);
-    })
-
-  },[]);
+const Blogs = (props) => {
+  const [blogs, setblogs] = useState(props.data)
   return (
     <>
     <div>
@@ -61,5 +48,14 @@ const Blogs = () => {
     </>
   );
 };
+
+export async function getServerSideProps() {
+  let data= await fetch("http://localhost:3000/api/Blogs")
+  data = await data.json();
+  return {
+    props: {data},
+  }
+}
+
 
 export default Blogs;

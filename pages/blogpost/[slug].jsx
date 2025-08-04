@@ -2,26 +2,8 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import sky from "@/public/img/sky.png";
 import Image from "next/image";
-const slug = () => {
-  const router = useRouter();
-  const [blog, setblog] = useState([])
-  useEffect(()=>{
-      const { slug } = router.query;
-        console.log(sky)
-         if (!router.isReady) return;
-        fetch(`http://localhost:3000/api/getBlogs?slug=${slug}`)
-        .then(response => {
-         // Return a Promise that resolves with the parsed body (e.g., JSON, text)
-          return response.json(); // or response.text(), response.blob(), etc.
-        })
-        .then(data => {
-          // Handle the parsed data from the previous .then()
-          console.log(data);
-          setblog(data)
-        })
-    
-      }, [router.isReady]);
-
+const slug = (props) => {
+  const [blog, setblog] = useState(props.data)
 
   return (
     <>
@@ -74,5 +56,14 @@ const slug = () => {
     </>
   );
 };
+export async function getServerSideProps(context) {
+  const { slug } = context.query;
+  let data= await fetch(`http://localhost:3000/api/getBlogs?slug=${slug}`)
+  data = await data.json();
+  return {
+    props: {data},
+  }
+}
+
 
 export default slug;
