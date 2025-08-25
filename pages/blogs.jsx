@@ -4,6 +4,9 @@ import sky from "@/public/img/sky.jpg";
 import Link from "next/link";
 
 const Blogs = (props) => {
+  function createMarkup(c) {
+  return {__html:c};
+}
   const [blogs, setblogs] = useState(props.data)
   return (
     <>
@@ -35,7 +38,7 @@ const Blogs = (props) => {
                 />
                 <span className="text-sm text-gray-700">{blogitem.Auther}</span>
               </div>
-              <span className="text-xs text-gray-500">July 5, 2025</span>
+              <span className="text-xs text-gray-500" dangerouslySetInnerHTML={createMarkup(blogitem.Beauty)}></span>
             </div>
           </Link>
           </div>

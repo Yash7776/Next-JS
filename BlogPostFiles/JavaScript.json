@@ -2,6 +2,6 @@
     "Heading":"JavaScript For Web",
     "Content":"The first popular web browser with a graphical user interface, Mosaic, was released in 1993. The lead developers of Mosaic then founded the Netscape corporation, which released a more polished browser, Netscape Navigator, in 1994. This quickly became the most-used.[12] During these formative years of the Web, web pages could only be static, lacking the capability for dynamic behavior after the page was loaded in the browser. There was a desire in the flourishing web development scene to remove this limitation, so in 1995, Netscape decided to add a programming language to Navigator. They pursued two routes to achieve this: collaborating with Sun Microsystems to embed the Java language, while also hiring Brendan Eich to embed the Scheme language.[6] The goal was a language for the masses,[13] to help nonprogrammers create dynamic, interactive Web sites.[14] Netscape management soon decided that the best option was for Eich to devise a new language, with syntax similar to Java and less like Scheme or other extant scripting languages.[5][6] Although the new language and its interpreter implementation were called LiveScript when first shipped as part of a Navigator beta in September 1995, the name was changed to JavaScript for the official release in December.[6][1][15][16]",
     "Auther":"Yash Pathak",
+    "Beauty":"<u>This Is H1 Tag</u>",
     "Slug":"JavaScript"
-
 }
