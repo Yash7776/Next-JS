@@ -1,6 +1,24 @@
 import React from 'react'
-
 const contact = () => {
+
+  const  submitContactDatails= async (e)=>{
+    e.preventDefault();
+    // console.log(e.target.name.value)
+    let responce= await fetch('http://127.0.0.1:3000/api/postcontact',{
+      method:'POST',
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify({
+        'name':e.target.name.value,
+        'email':e.target.email.value,
+        'desc':e.target.desc.value,
+      })
+    })
+    let data= await responce.json()
+    console.log(data)
+  }
+
   return (
     <div>
       <section class="bg-gray-100 py-12 px-4">
@@ -17,20 +35,20 @@ const contact = () => {
       </ul>
     </div>
 
-    <form class="p-8 space-y-6 bg-white">
+    <form class="p-8 space-y-6 bg-white" onSubmit={submitContactDatails}>
       <div>
         <label class="block mb-1 text-sm font-medium text-gray-700">Name</label>
-        <input type="text" placeholder="Your Name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+        <input name="name" type="text" placeholder="Your Name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
       </div>
       
       <div>
         <label class="block mb-1 text-sm font-medium text-gray-700">Email</label>
-        <input type="email" placeholder="you@example.com" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+        <input name="email" type="email" placeholder="you@example.com" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
       </div>
       
       <div>
         <label class="block mb-1 text-sm font-medium text-gray-700">Message</label>
-        <textarea rows="4" placeholder="Your message..." class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+        <textarea name="desc" rows="4" placeholder="Your message..." class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
       </div>
 
       <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition">
