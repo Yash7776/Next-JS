@@ -15,7 +15,7 @@ const NavBar = () => {
                 Home
               </Link>
               <Link
-                href="/"
+                href="/about"
                 className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
               >
                 About
@@ -38,10 +38,11 @@ const NavBar = () => {
             <div className="flex items-center space-x-2">
               <span className="text-sm">Hi, User</span>
               <img
-                src="https://i.pravatar.cc/40"
+                src="https://i.pravatar.cc/500"
                 alt="Profile"
                 className="rounded-full border border-white"
                 unoptimized // allows external image without config
+                width={50}
               />
             </div>
           </div>
